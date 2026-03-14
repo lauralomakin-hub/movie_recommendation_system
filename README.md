@@ -5,40 +5,57 @@ This project implements a movie recommendation system using the MovieLens datase
 
 The goal is to explore and compare different recommendation techniques and present the results in an interactive Dash application.
 
-Features
+## Features
 
-Genre-based similarity using cosine similarity
+-Interactive Dash interface
+-Modular design separating model logic and UI
+-Content-based movie recommendations
 
-Improved recommendations using TF-IDF on movie tags
+## Recommendation Methods
 
-Interactive Dash interface
+The project explores different recommendation techniques:
 
-Modular design separating model logic and UI
+-Genre similarity using cosine similarity on movie genres
+-Tag-based similarity using TF-IDF features extracted from movie tags
 
-Dataset
+These methods allow comparison between simple content-based filtering and more feature-rich approaches.
 
-The project uses the MovieLens dataset from GroupLens.
+## Dataset
 
-Download the dataset (ml-latest.zip) from:
+## Dataset
+
+This project uses the **MovieLens "ml-latest" dataset**, which is recommended for education and development.
+
+Download the dataset from:
 https://grouplens.org/datasets/movielens/
 
 Extract the files into:
 
 data/raw/
 
-The dataset is not included in this repository.
+Required files:
 
-Installation
+movies.csv
+ratings.csv
+tags.csv
+links.csv
 
-Create a virtual environment and install dependencies:
+The genome files included in the dataset are not used in this project.
 
-pip install -r requirements.txt
+
+**The dataset is not included in this repository.**
+
+## Installation
+
+Install dependencies using uv:
+
+uv sync
 Run the application
-python app/app.py
+uv run python app/app.py
 
 The Dash server will start locally and open in your browser.
 
-Project Structure
+## Project Structure
 
 src/ – data processing, feature engineering, recommendation logic
 
@@ -48,8 +65,7 @@ notebooks/ – exploratory analysis
 
 reports/ – written report and documentation
 
-Purpose
+## Purpose
 This project was developed as part of a Machine Learning course and demonstrates feature engineering, similarity metrics, and model evaluation in a recommendation system context.
 
-This project was developed as part of a Machine Learning course and demonstrates feature engineering, similarity metrics, and model evaluation in a recommendation system context.
 
