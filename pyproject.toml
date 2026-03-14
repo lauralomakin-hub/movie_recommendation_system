@@ -1,0 +1,13 @@
+[project]
+name = "movie-recommendation-system"
+version = "0.1.0"
+description = "description = "Exploration of movie recommendation techniques using Python, pandas and scikit-learn."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dash>=4.0.0",
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+    "plotly>=6.6.0",
+    "scikit-learn>=1.8.0",
+]
