@@ -5,20 +5,30 @@ This project implements a movie recommendation system using the MovieLens datase
 
 The goal is to explore and compare different recommendation techniques and present the results in an interactive Dash application.
 
-## Features
+## Planned features
 
 -Interactive Dash interface
--Modular design separating model logic and UI
 -Content-based movie recommendations
 
 ## Recommendation Methods
 
-The project explores different recommendation techniques:
+The project explores multiple recommendation approaches with increasing complexity:
 
--Genre similarity using cosine similarity on movie genres
--Tag-based similarity using TF-IDF features extracted from movie tags
+- Genre-based similarity using cosine similarity on movie genres (baseline model)
+- Genre and tag-based similarity using TF-IDF to capture richer movie content
 
-These methods allow comparison between simple content-based filtering and more feature-rich approaches.
+To improve recommendation quality, additional ranking strategies were introduced:
+
+- User-weighted ratings to reduce the influence of highly active users (superusers)
+- An IMDb-inspired Bayesian weighted rating to balance rating quality and rating count
+- A final reranking step combining similarity, rating quality, and popularity
+
+These steps allow comparison between a simple content-based model and a more robust hybrid approach that accounts for both content and rating behavior.
+
+Planned extensions include:
+- A collaborative filtering approach to incorporate user behavior patterns
+- An interactive interface built with Dash to enable exploration and evaluation of recommendations
+
 
 ## Dataset
 
@@ -57,15 +67,16 @@ The Dash server will start locally and open in your browser.
 
 ## Project Structure
 
-src/ – data processing, feature engineering, recommendation logic
-
-app/ – Dash user interface
-
-notebooks/ – exploratory analysis
+notebooks/ – exploratory analysis, feature engineering, and model development
 
 reports/ – written report and documentation
 
+Future structure:
+- src/ – for modularizing data processing and recommendation logic
+- app/ – for a Dash-based user interface
+
 ## Purpose
-This project was developed as part of a Machine Learning course and demonstrates feature engineering, similarity metrics, and model evaluation in a recommendation system context.
 
+This project was developed as part of a Machine Learning course and focuses on building and improving a movie recommendation system.
 
+It demonstrates feature engineering, similarity-based recommendation methods, and evaluation of different modeling approaches. The project also handles challenges such as missing tag data, uneven rating distribution, and popularity bias through different weighting and fallback strategies.
